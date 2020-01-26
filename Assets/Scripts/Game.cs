@@ -15,32 +15,28 @@ public class Game : MonoBehaviour {
     public string treggString;
     public Vector3 rotateTregg;
     private BigInteger treggsPerClicks = 1;
-    
+
     private BigInteger treggs;
     private readonly Inventory inventory = new Inventory();
     private float timeSinceLastUpdate;
     private float timeBetweenUpdates = 1f;
 
-    public static BigInteger Treggs
-    {
+    public static BigInteger Treggs {
         get => instance.treggs;
-        set
-        {
+        set {
             instance.Emit((int)(value - Treggs));
-            
+
             instance.treggs = value;
             ShoppingList.Update();
             instance.text.text = $"{Treggs} {instance.treggString}";
         }
     }
 
-    private void Awake()
-    {
+    private void Awake() {
         instance = this;
     }
 
-    private void Start()
-    {
+    private void Start() {
         Treggs = 0;
         Load();
     }
@@ -48,7 +44,7 @@ public class Game : MonoBehaviour {
     private void OnApplicationPause() {
         Save();
     }
-    
+
     private void OnApplicationQuit() {
         Save();
     }
@@ -70,20 +66,17 @@ public class Game : MonoBehaviour {
         t.localScale = Vector3.Lerp(current, target, lerp);
 
         timeSinceLastUpdate += Time.deltaTime;
-        if (timeSinceLastUpdate >= timeBetweenUpdates)
-        {
+        if(timeSinceLastUpdate >= timeBetweenUpdates) {
             timeSinceLastUpdate = 0f;
             OnUpdate();
         }
     }
 
-    private void OnUpdate()
-    {
+    private void OnUpdate() {
         Treggs += inventory.GetPropertySum("TreggsPerUpdate", 0);
     }
 
-    public void Click()
-    {
+    public void Click() {
         Treggs += treggsPerClicks * inventory.GetPropertySum("ClickMultiplier", 1);
         t.localScale = new Vector3(0.8f, 0.8f, 0.8f);
     }
@@ -92,18 +85,23 @@ public class Game : MonoBehaviour {
         ps.Emit(parts);
     }
 
-    public static void OnItemClicked(Item item)
-    {
-        if (Treggs < item.price.ToBigInteger())
+    public static void OnItemClicked(Item item) {
+        if(Treggs < item.price.ToBigInteger())
             return;
-            
+
         Debug.Log($"Bought {item.name}");
         Treggs -= item.price.ToBigInteger();
         instance.inventory.Add(item);
-        
+
+        //Do Dialogue stuff on first buy
+        if(!item.dialogueDiscovered) {
+            item.dialogueDiscovered = true;
+            DialogueBox.SetDialogue(item.dialogueIcon, item.dialogueText);
+        }
+
         // TODO: OH GOD PLEASE FIX ME.... OH GOD
         item.amount = (item.amount.ToBigInteger() + 1).ToString();
-//        item.price = (Convert.ToDouble(item.price) * 1.1).ToString();
+        //        item.price = (Convert.ToDouble(item.price) * 1.1).ToString();
         item.price = (item.price.ToBigInteger() + item["PriceIncrease"]).ToString();
         Debug.Log(item.price);
         ShoppingList.Update();

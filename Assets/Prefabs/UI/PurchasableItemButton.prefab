@@ -65,8 +65,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: 1,000 TGs
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: acaed96722c41f649839e150f7374c06, type: 2}
+  m_sharedMaterial: {fileID: 530419791086650135, guid: acaed96722c41f649839e150f7374c06,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -220,8 +221,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Trell
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: acaed96722c41f649839e150f7374c06, type: 2}
+  m_sharedMaterial: {fileID: 530419791086650135, guid: acaed96722c41f649839e150f7374c06,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -419,6 +421,7 @@ MonoBehaviour:
   amountText: {fileID: 5185206452621575461}
   pricetext: {fileID: 8389900939736162462}
   icon: {fileID: 6450728974114921855}
+  dialogueDiscovered: 0
 --- !u!1 &4330964129162303206
 GameObject:
   m_ObjectHideFlags: 0
@@ -484,8 +487,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: 99999
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: acaed96722c41f649839e150f7374c06, type: 2}
+  m_sharedMaterial: {fileID: 530419791086650135, guid: acaed96722c41f649839e150f7374c06,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

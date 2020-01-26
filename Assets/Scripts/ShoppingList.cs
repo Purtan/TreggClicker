@@ -2,34 +2,28 @@
 using Assets.Scripts.Util;
 using UnityEngine;
 
-public class ShoppingList : MonoBehaviour
-{
+public class ShoppingList : MonoBehaviour {
     private static ShoppingList instance;
-    
+
     public Item[] items;
     public Transform shoppingListContainer;
     public GameObject shoppingItemPrefab;
 
-    private void Awake()
-    {
+    private void Awake() {
         instance = this;
     }
 
-    private void Start()
-    {
+    private void Start() {
         Update();
     }
 
-    public static void Update()
-    {
+    public static void Update() {
         instance.UpdateInternal();
     }
 
-    private void UpdateInternal()
-    {
+    private void UpdateInternal() {
         instance.shoppingListContainer.ClearChildren();
-        foreach (var item in items.Where(i => i.price.ToBigInteger() <= Game.Treggs || i.Revealed))
-        {
+        foreach(var item in items.Where(i => i.price.ToBigInteger() <= Game.Treggs || i.Revealed)) {
             Instantiate(shoppingItemPrefab, shoppingListContainer).GetComponent<PurchasableItemButton>().SetItem(item);
         }
     }
