@@ -28,7 +28,7 @@ public class Game : MonoBehaviour {
 
             instance.treggs = value;
             ShoppingList.Update();
-            instance.text.text = $"{Treggs} {instance.treggString}";
+            instance.text.text = $"{Util.FormatNumber(Treggs)} {instance.treggString}";
         }
     }
 

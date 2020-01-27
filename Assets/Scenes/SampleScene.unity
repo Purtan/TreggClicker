@@ -865,8 +865,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua."'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: acaed96722c41f649839e150f7374c06, type: 2}
   m_sharedMaterial: {fileID: 530419791086650135, guid: acaed96722c41f649839e150f7374c06,
@@ -895,7 +894,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 79.1
+  m_fontSize: 101.4
   m_fontSizeBase: 101.4
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -936,13 +935,13 @@ MonoBehaviour:
   m_margin: {x: 30, y: 30, z: 30, w: 30}
   m_textInfo:
     textComponent: {fileID: 420107838}
-    characterCount: 125
+    characterCount: 0
     spriteCount: 0
-    spaceCount: 18
-    wordCount: 19
+    spaceCount: 0
+    wordCount: 0
     linkCount: 0
-    lineCount: 4
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
