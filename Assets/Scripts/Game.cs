@@ -50,11 +50,16 @@ public class Game : MonoBehaviour {
     }
 
     public void Save() {
-        PlayerPrefs.SetString("Treggs", Treggs.ToString());
+        //PlayerPrefs.SetString("Treggs", Treggs.ToString());
+        SaveManager.saveFile.SetTreggCount(Treggs.ToString());
+        SaveManager.Save();
     }
 
     public void Load() {
-        Treggs = BigInteger.Parse(PlayerPrefs.GetString("Treggs"));
+        //Treggs = BigInteger.Parse(PlayerPrefs.GetString("Treggs"));
+        SaveManager.Load();
+        Debug.Log(Treggs);
+        Treggs = SaveManager.saveFile.GetTreggCount();
     }
 
     void Update() {
